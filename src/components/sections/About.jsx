@@ -1,18 +1,18 @@
-import RevealOnScroll from '../RevealOnScroll'
+import RevealOnScroll from "../RevealOnScroll";
 
 const About = () => {
   const frontendSkills = [
-    'React',
-    'React Router',
-    'Vite',
-    'Vue',
-    'Tailwind CSS',
-    'MUI',
-    'Axios',
-    'Bootstrap 5',
-  ]
+    "React",
+    "React Router",
+    "Vite",
+    "Vue",
+    "Tailwind CSS",
+    "MUI",
+    "Axios",
+    "Bootstrap 5",
+  ];
 
-  const backendSkills = ['Node.js', 'Express.js', 'MySQL']
+  const backendSkills = ["Node.js", "Express.js", "MySQL"];
   return (
     <section
       id="about"
@@ -26,10 +26,14 @@ const About = () => {
 
           <div className="rounded-xl hover:translate-y-1 hover:border-[#ef4442] transition-all border p-6 mb-8 hover:cursor-pointer">
             <p className="text-[#eff8f7] mb-8">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-              reiciendis dolore itaque aperiam odit ipsum repellat optio a unde
-              id. Magni accusamus sapiente cumque pariatur nesciunt dolore,
-              aspernatur cupiditate recusandae?
+              I am a BSIT graduate and Web Developer with experience building
+              responsive and user-friendly web applications. I work with
+              technologies such as HTML, CSS, JavaScript, React.js, Vue.js,
+              Node.js, and MySQL to develop efficient and scalable solutions. I
+              also have experience teaching IT-related subjects, which
+              strengthened my communication and problem-solving skills. I am
+              passionate about continuous learning and eager to contribute to
+              meaningful projects while growing as a developer.
             </p>
           </div>
 
@@ -113,7 +117,7 @@ const About = () => {
         </div>
       </RevealOnScroll>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;
