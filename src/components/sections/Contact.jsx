@@ -12,12 +12,18 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    console.log({
+      serviceId: import.meta.env.VITE_SERVICE_ID,
+      templateId: import.meta.env.VITE_TEMPLATE_ID,
+      publicKey: import.meta.env.VITE_PUBLIC_KEY,
+    });
+
     emailjs
       .sendForm(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
-        import.meta.env.VITE_PUBLIC_KEY,
         e.target,
+        import.meta.env.VITE_PUBLIC_KEY,
       )
       .then((result) => {
         alert('Message sent');
@@ -36,6 +42,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
+            <input type="hidden" name="title" value="Portfolio Contact Form" />
             <div className="relative">
               <input
                 type="text"
