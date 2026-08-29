@@ -12,13 +12,18 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    console.log({
+      serviceId: import.meta.env.VITE_SERVICE_ID,
+      templateId: import.meta.env.VITE_TEMPLATE_ID,
+      publicKey: import.meta.env.VITE_PUBLIC_KEY,
+    });
+
     emailjs
       .sendForm(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
         e.target,
         import.meta.env.VITE_PUBLIC_KEY,
-        e.target,
       )
       .then((result) => {
         alert("Message sent");
@@ -30,14 +35,14 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center py-20 bg-[#1f284d] w-full"
-    >
+      className="min-h-screen flex items-center justify-center py-20 bg-[#1f284d] w-full">
       <RevealOnScroll>
         <div className="w-auto px-4 sm:w-[900px]">
           <h2 className="text-3xl font-bold mb-8 text-[#ef4442] text-center">
             Get In Touch
           </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
+            <input type="hidden" name="title" value="Portfolio Contact Form" />
             <div className="relative">
               <input
                 type="text"
@@ -85,8 +90,7 @@ const Contact = () => {
             <div className="flex items-center justify-center p-3 my-3">
               <button
                 type="submit"
-                className="sm:max-w-[639px] bg-[#ef4442] text-[#eff8f7] py-3 px-6 rounded font-medium transition relative overflow-hidden hover:translate-y-0.5 hover:shadow-[#ef4442]/50 hover:shadow-lg"
-              >
+                className="sm:max-w-[639px] bg-[#ef4442] text-[#eff8f7] py-3 px-6 rounded font-medium transition relative overflow-hidden hover:translate-y-0.5 hover:shadow-[#ef4442]/50 hover:shadow-lg">
                 Send Message
               </button>
             </div>
