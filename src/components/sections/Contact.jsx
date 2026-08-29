@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import RevealOnScroll from '../RevealOnScroll';
-import emailjs from 'emailjs-com';
+import { useState } from "react";
+import RevealOnScroll from "../RevealOnScroll";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = (e) => {
@@ -26,10 +26,10 @@ const Contact = () => {
         import.meta.env.VITE_PUBLIC_KEY,
       )
       .then((result) => {
-        alert('Message sent');
-        setFormData({ name: '', email: '', message: '' });
+        alert("Message sent");
+        setFormData({ name: "", email: "", message: "" });
       })
-      .catch(() => alert('An error occurred, please try again later.'));
+      .catch(() => alert("An error occurred, please try again later."));
   };
 
   return (
